@@ -1,0 +1,1781 @@
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+
+
+
+.chat-input .file-label {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.chat-input .file-icon {
+  width: 20px;
+  height: 24px;
+  background: #333;
+}
+
+.chat-input input[type="file"] {
+  display: none;
+}
+
+.chat-input .image-preview {
+  max-width: 60px;
+  max-height: 60px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.chat-input .image-preview img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.chat-input textarea {
+  flex: 1;
+  resize: none;
+}
+
+#send-btn {
+  margin-left: 10px;
+}
+
+/* Styling för bildförhandsgranskningen */
+.chat-input .image-preview {
+  max-width: 60px;
+  max-height: 60px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.chat-input .image-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+}
+
+.chat-input .image-preview .remove-image {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #fff;
+  color: #000;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 18px;
+  border: 1px solid #ccc;
+}
+
+.chat-input .image-preview .remove-image:hover {
+  background: #e69500;
+  color: #fff;
+}
+
+
+/* Dölj det faktiska filinmatningsfältet */
+.chat-input input[type="file"] {
+  display: none;
+}
+
+/* Stil för etiketten som fungerar som en knapp */
+.chat-input .file-label {
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Skapa filikonen med CSS */
+.chat-input .file-icon {
+  width: 20px;
+  height: 24px;
+  position: relative;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Skapa "vikningen" på filikonen */
+.chat-input .file-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 8px solid #fff;
+  border-left: 8px solid transparent;
+  width: 0;
+}
+
+/* Ändra färg vid hover */
+.chat-input .file-label:hover .file-icon {
+  background: #e69500;
+}
+
+.chat-input .file-label:hover .file-icon::before {
+  border-top-color: #fff;
+}
+
+/* Justera inmatningsfältet och skicka-knappen */
+.chat-input textarea {
+  flex: 1;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.chat-input textarea:focus {
+  border-color: #e69500;
+}
+
+
+
+/* Styling för chat-input sektionen */
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  position: relative;
+}
+
+/* Styling för tal-till-text-knappen */
+#speech-btn {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+#speech-btn:hover {
+  color: #e69500;
+}
+
+/* Styling för textarea */
+.chat-input textarea {
+  flex: 1;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.chat-input textarea:focus {
+  border-color: #e69500;
+}
+
+/* Styling för send-knappen */
+#send-btn {
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#send-btn:hover {
+  color: #e69500;
+}
+
+/* Styling för chatbot-chat-button */
+.chatbot-chat-button {
+  position: fixed;
+  bottom: 30px;
+  right: 100px; /* Justera för att placera den bredvid chatbot-togglern */
+  outline: none;
+  border: none;
+  height: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.chatbot-chat-button::after {
+  content: "→"; /* Pil för att indikera att man kan klicka */
+  margin-left: 10px;
+  font-size: 18px;
+  animation: blink 1.5s infinite; /* Blinkande animation */
+}
+
+.chatbot-chat-button:hover {
+  background-color: #e69500;
+  box-shadow: 0 0 15px rgba(230, 149, 0, 0.5);
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Pulsande effekt för toggler-knappen */
+.chatbot-toggler {
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: black;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: pulse 1.5s infinite; /* Pulsande animation */
+}
+
+
+
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  }
+  100% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Styling för .suggestions knappar */
+.suggestions button {
+  background-color: #333; /* Mörk bakgrund */
+  color: white; /* Vit text */
+  border: none; /* Ingen kantlinje som standard */
+  padding: 10px 20px; /* Innanmätning */
+  border-radius: 5px; /* Rundade hörn */
+  cursor: pointer; /* Pekare vid hover */
+  font-size: 0.9rem; /* Textstorlek */
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Övergångseffekter */
+}
+
+.suggestions button:hover {
+  background-color: #ffffff; /* Vit bakgrund vid hover */
+  color: black; /* Svart textfärg vid hover */
+  border: 1px solid #000; /* Svart, solid kant */
+}
+
+
+/* Lägger till marginal för att kompensera för den fasta menyn */
+body {
+    margin-left: 220px; /* Justera baserat på menyens nya bredd */
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px; /* Minska bastextstorleken */
+}
+
+/* Desktop version: Menyn är fastklistrad på vänster sida */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px; /* Standardbredd för större skärmar */
+    height: 100%;
+    background-color: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Stil för logotypen */
+.logo-juri {
+    margin-bottom: 30px; /* Skapa avstånd mellan logotypen och länkarna */
+}
+/* Stil för logotypen, med Jüri och Salu på separata rader */
+.logo-juri h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 24px; /* Minska storleken för att få ett renare utseende */
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.logo-juri h1 span {
+    display: block; /* Tvingar varje ord till en ny rad */
+}
+
+/* Lägger till flexbox på hela menyn så att sociala länkar och språkväxling är i linje */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px; /* Skapar utrymme mellan länkar och sociala ikoner */
+}
+
+/* Stil för navigationslänkar */
+nav ul li {
+    margin-bottom: 20px; /* Mellanrum mellan länkarna */
+}
+
+
+/* Standardstil för alla länkar */
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 16px;
+    color: black;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Efter-effekt för streck under länkar */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    transition: width 0.5s ease;
+}
+
+/* När en länk hovras, växer strecket från höger till vänster, men inte för aktiva länkar */
+nav ul li a:hover:not(.active)::after,
+nav ul li a:focus:not(.active)::after {
+    width: 100%; /* Strecket växer vid hover eller fokus */
+}
+
+/* Stil för den aktiva länken - inget händer vid hover */
+nav ul li a.active {
+    border-bottom: 1px solid black; /* Aktiv länk har ett fast streck */
+}
+
+/* Förhindra att hover-effekten körs på aktiva länkar */
+nav ul li a.active:hover::after {
+    width: 0; /* Strecket ska inte animera på den aktiva länken */
+}
+
+#galleri {
+    text-align: center; /* Centrerar texten inom gallerisektionen */
+}
+
+/* Stil för gallerirubriken */
+.gallery-heading {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    padding-left: 10px;
+    padding-top: 30px;
+}
+
+.gallery-heading-123 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    padding-left: 10px;
+}
+
+.gallery-subheading {
+    font-size: 25px;
+    text-align: left;
+    color: #333;
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+.subheading-text {
+    font-size: 12px;
+    text-align: left;
+    color: #333;
+    padding-left: 25px;
+}
+
+/* Galleri-container */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+/* Stil för varje galleriobjekt */
+.gallery-item {
+    overflow: hidden;
+    border: none;
+}
+
+/* Bilden i galleriet */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    box-sizing: border-box; /* Se till att border inkluderas i bildens totala storlek */
+    border: 1px solid #cccccc; /* Lägger till en ljusgrå ram runt bilden */
+    border-radius: 0px; /* Rundar hörnen för en mjukare look */
+    transition: border-color 0.3s ease-in-out; /* Transition för att göra ramens färg dynamisk */
+
+ 
+
+}
+
+
+/* Stil för galleriinfon (underrubrik och datum) */
+.gallery-info {
+    padding: 10px 0;
+    text-align: left; /* Vänsterjusterad text */
+}
+
+.gallery-subtitle {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #000; /* Svart färg för att ge underrubriken mer fokus */
+    font-weight: bold;
+}
+
+.gallery-date {
+    font-size: 14px;
+    color: #666; /* Ljusare grå färg för datum */
+    margin: 3px 0;
+    font-style: italic; /* Kursiv stil för datumet */
+
+}
+
+/* Anpassning för mindre skärmar */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .gallery-subtitle {
+        font-size: 16px;
+    }
+
+    .gallery-date {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+/* Stil för linjen ovanför Vernissage-sektionen med extra utrymme */
+.section-divider {
+    width: 80%; /* Gör linjen smalare för att ge utrymme på båda sidor */
+    height: 1.5px;
+    background-color: #000; /* Svart linje */
+    margin: 40px auto; /* Centrerar linjen och ger utrymme ovanför och nedanför */
+    margin-left: 10%; /* Skapar utrymme till vänster */
+    margin-right: 10%; /* Skapar utrymme till höger */
+}
+
+
+/* Footer ska alltid vara längst ner */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Stil för modalen */
+.modal {
+    display: none; /* Dold som standard */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Mörk bakgrund med transparens */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+
+
+/* Kontaktsektion */
+#contact-section {
+    max-width: 600px;
+    margin: 80px auto;
+    padding-left: 20px;  /* Extra utrymme till vänster */
+    padding-right: 40px; /* Extra utrymme till höger för att kompensera för menyn */
+}
+
+h2:not(.chatbot h2) {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+
+/* Kontaktinformation */
+.contact-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Kontaktformulär */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    #contact-section {
+        padding-left: 10px;  /* Justera för små skärmar */
+        padding-right: 40px; /* Justera för små skärmar med vänsterställd meny */
+    }
+}
+
+/* För mindre skärmar, täcker menyn 1/4 av skärmens bredd */
+@media (max-width: 768px) {
+    header {
+        width: 25vw; /* 1/4 av skärmens bredd */
+    }
+
+    body {
+        margin-left: 25vw; /* Justera innehållet baserat på menybredden */
+    }
+}
+
+/* Anpassar för ännu mindre skärmar om det behövs */
+@media (max-width: 480px) {
+    header {
+        width: 25vw; /* Behåll 1/4 av skärmens bredd även på mindre mobila enheter */
+    }
+
+    body {
+        margin-left: 25vw; /* Justera innehållet för den smalare menyn */
+    }
+}
+
+/* Vernissage-sektion */
+#vernissage {
+    padding: 50px 20px; /* Standard padding för större skärmar */
+    margin-left: 20px; /* Utrymme till vänster för menyn */
+    box-sizing: border-box;
+}
+
+.left-column {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Stil för kartan */
+.map-container {
+    padding-left: 10px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+/* För mindre skärmar: vernissage med utrymme till höger och vänster */
+@media (max-width: 768px) {
+    #vernissage {
+        padding-left: 10px; /* Utrymme till vänster */
+        padding-right: 1vw; /* Utrymme till höger för att matcha menyns bredd */
+        margin-left: 0; /* Justera för mobila skärmar */
+    }
+}
+
+@media (max-width: 480px) {
+    #vernissage {
+        padding-left: 10px;
+        padding-right: 1vw; /* Anpassa för mindre skärmar med utrymme för menyn */
+        margin-left: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+
+/* Om-sektion */
+/* Huvudinnehållet ska ta upp så mycket plats som möjligt */
+#about {
+    flex: 1;
+    padding: 20px 10px;
+    text-align: center;
+    min-height: calc(100vh - 200px); /* Kalkylera höjden minus footerns höjd och margin */
+
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-image {
+    margin-bottom: 20px;
+}
+
+.juri-image {
+    width: 150px; /* Gör bilden mindre */
+    height: auto;
+    border-radius: 50%; /* Gör bilden rundad */
+    border: 3px solid #ddd; /* Lägger till en subtil ram */
+    filter: grayscale(100%); /* Gör bilden helt svartvit */
+}
+
+.about-text {
+    font-size: 14px;
+    color: #555;
+}
+
+.about-text h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Responsivitet för mindre skärmar */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 20px;
+    }
+
+    .juri-image {
+        width: 120px; /* Minska bilden ytterligare för små skärmar */
+    }
+}
+
+/* Innehåll som expanderar för att fylla upp sidan */
+#content {
+    flex: 1; /* Gör så att innehållet expanderar och fyller utrymme mellan header och footer */
+}
+
+/* Footer som klistras längst ned */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Stil för gallerirubriken */
+.vernissage-heading {
+    font-size: 52px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
+.vernissage-heading-p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 7px;
+    color: #4a4a4a;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.vernissage-heading-p2 {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 7px;
+    color: #4a4a4a;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.artal {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+
+/* Reset all margins and paddings */
+.chatbot * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', serif;
+}
+  
+
+
+.chatbot-toggler {
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: black;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: pulse 1.5s infinite; /* Lägg till en pulsande animation */
+}
+
+/* Rotate the toggler when chatbot is open */
+body.show-chatbot .chatbot-toggler {
+  transform: rotate(90deg);
+}
+
+.chatbot-toggler span {
+  color: #fff;
+  position: absolute;
+}
+
+.chatbot-toggler span:last-child,
+body.show-chatbot .chatbot-toggler span:first-child {
+  opacity: 0;
+}
+
+/* Show close icon when chatbot is open */
+body.show-chatbot .chatbot-toggler span:last-child {
+  opacity: 1;
+}
+
+/* Chatbot container styling */
+.chatbot {
+  position: fixed;
+  right: 35px;
+  bottom: 90px;
+  width: 350px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.5);
+  transform-origin: bottom right;
+  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+              0 32px 64px -48px rgba(0,0,0,0.5);
+  transition: all 0.1s ease;
+}
+
+/* Chatbot visible when toggled */
+body.show-chatbot .chatbot {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+/* Custom chatbot header */
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 15px;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  background: black;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 3px;
+  margin-top: 5px;
+}
+
+.header-text h2 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 0px;
+}
+
+/* Logo next to the header text */
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+/* Styling for the close button */
+.chatbot-header .close-btn {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+/* Styling for clear chat button */
+.chatbot-header .clear-chat-icon {
+  position: absolute;
+  right: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+/* Chatbox styling for displaying messages */
+.chatbox {
+  overflow-y: auto;
+  height: 510px;
+  padding: 30px 20px 100px;
+}
+
+.chatbox .chat {
+  display: flex;
+  list-style: none;
+}
+
+/* Outgoing messages styling */
+.chatbox .outgoing {
+  margin: 20px 0;
+  justify-content: flex-end;
+}
+
+.chatbox .incoming span {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  cursor: default;
+  text-align: center;
+  line-height: 32px;
+  align-self: flex-end;
+  background: black;
+  border-radius: 4px;
+  margin: 0 10px 7px 0;
+}
+
+/* För inkommande meddelanden (chatbotens meddelanden) */
+.chatbox .incoming p {
+  background-color: #F0F0F0 !important; /* Grå bakgrund */
+  color: #000 !important; /* Svart text */
+  border-radius: 7px 7px 7px 0px !important; /* Justera rundade hörn efter behov */
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+}
+
+/* För utgående meddelanden (användarens meddelanden) */
+.chatbox .outgoing p {
+  background-color: black !important; /* Grå bakgrund */
+  color: white !important; /* Svart text */
+  border-radius: 7px 7px 0 7px !important; /* Justera rundade hörn efter behov */
+  padding: 12px 16px !important;
+  margin: 10px 0 !important;
+  text-align: right !important;
+}
+
+
+
+
+/* Styling for all chat messages   border-radius: 0px 10px 10px 10px;
+*/
+.chatbox .chat p {
+  white-space: pre-wrap;
+  padding: 12px 16px;
+  max-width: 75%;
+  color: #fff;
+  font-size: 0.95rem;
+  background: black;
+}
+
+/* Error message styling */
+.chatbox .chat p.error {
+  color: #721c24;
+  background: #f8d7da;
+}
+
+/* Input area for sending messages */
+.chat-input {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  padding: 3px 20px;
+  border-top: 1px solid #ddd;
+}
+
+/* Text area for typing messages */
+.chat-input textarea {
+  height: 55px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  max-height: 180px;
+  padding: 15px 15px 15px 0;
+  font-size: 0.95rem;
+}
+
+/* Send button that appears after typing */
+.chat-input span {
+  align-self: flex-end;
+  color: black;
+  cursor: pointer;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  font-size: 1.35rem;
+}
+
+.chat-input textarea:valid ~ span {
+  visibility: visible;
+}
+
+/* Scrollbar styling for chatbox and textarea */
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 25px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+
+/* Suggestions buttons */
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  background-color: transparent;
+  margin-left: 28px;
+}
+
+.suggestions button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for suggestion buttons */
+/* Styling för knappar i .suggestions-sektionen när de hovras över */
+.suggestions button:hover {
+  background-color: #ffffff; /* Vit bakgrund vid hover */
+  color: black; /* Svart textfärg vid hover */
+  border: 1px solid #000; /* Svart, solid kant */
+}
+
+
+/* Footer with created by link */
+.created-by {
+  text-align: center;
+  font-size: 0.6rem;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.created-by a {
+  position: relative;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Hover effect for footer link */
+.created-by a:hover {
+  color: #000000;
+}
+
+/* Underline animation for link */
+.created-by a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: black;
+  transition: width 0.4s ease;
+}
+
+.created-by a:hover::after {
+  width: 100%;
+}
+
+/* Modal background */
+.modal-delete {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content styling */
+.modal-content-chatbot {
+  background-color: #f4f4f4;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-delete p {
+  margin-bottom: 20px;
+}
+
+/* Modal buttons styling */
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Confirm and cancel button styles */
+.confirm-btn {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #ffffff;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px;
+}
+
+/* Hover effect for modal buttons */
+.confirm-btn:hover,
+.cancel-btn:hover {
+  opacity: 0.9;
+}
+
+/* Clear message after chat reset */
+.clear-message {
+  text-align: center;
+  color: black;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+/* Fade out animation */
+.clear-message.fade-out {
+  opacity: 0;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 490px) {
+  .chatbot-toggler {
+    right: 20px;
+    bottom: 20px;
+  }
+  .chatbot {
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    border-radius: 0;
+    width: 100%;
+  }
+  .chatbot .chatbox {
+    height: 90%;
+    padding: 25px 15px 100px;
+  }
+  .chatbot .chat-input {
+    padding: 5px 15px;
+  }
+  .chatbot-header span {
+    display: block;
+  }
+}
+
+/* Styling för Hero Sektionen */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 15px;
+  background: none; /* Ingen bakgrundsfärg */
+  gap: 20px;
+  color: #000; /* Svart text */
+}
+
+/* Hero innehåll */
+.hero-content {
+  max-width: 500px;
+}
+
+/* Rubrik och beskrivning */
+.hero-content h1 {
+  font-size: 1.8rem; /* Mindre textstorlek */
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #000; /* Svart text */
+}
+
+.hero-content p {
+  font-size: 0.9rem; /* Mindre textstorlek */
+  margin-bottom: 20px;
+  color: #444; /* Mörkgrå textfärg */
+}
+
+/* Knappar i Hero sektionen */
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Knappar i Hero sektionen */
+.cta-btn, .secondary-btn {
+  background-color: transparent;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 0; /* Ingen rundning behövs */
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  position: relative; /* För positionering av pseudo-element */
+  display: inline-block;
+  border: none; /* Ingen kantlinje */
+  overflow: hidden; /* För att undvika att pseudo-elementet läcker utanför */
+}
+
+/* Understrykning som alltid syns */
+.cta-btn::after, .secondary-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Linjen täcker hela textens bredd */
+  height: 2px; /* Tjocklek på understrykningen */
+  background-color: #000; /* Svart färg för understrykningen */
+}
+
+
+
+/* Hero bild */
+.hero-image {
+  max-width: 400px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  filter: grayscale(100%); /* Svartvitt filter */
+}
+
+/* Mobilanpassning */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 10px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem; /* Mindre textstorlek för mobiler */
+  }
+
+  .hero-content p {
+    font-size: 0.8rem; /* Justerad textstorlek för mobiler */
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Anpassning för ännu mindre skärmar */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.7rem; /* Ytterligare mindre för små mobiler */
+  }
+
+  .cta-btn, .secondary-btn {
+    font-size: 0.8rem; /* Mindre textstorlek för knappar */
+    padding: 6px 14px; /* Mindre padding för knappar */
+  }
+}
+
+/* Fördelar/Snabböversikt Sektion */
+.benefits {
+  padding: 60px 20px;
+  background-color: #fff; /* Ingen grå bakgrund */
+  text-align: center;
+}
+
+.benefits h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #000;
+}
+
+/* Responsivt rutnät för fördelar */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tre per rad på större skärmar */
+  gap: 30px; /* Större avstånd mellan boxarna */
+}
+
+.benefit-item {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Mjuk skugga */
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrera innehållet horisontellt */
+  justify-content: center;
+  min-height: 250px; /* Större minsta höjd för att justera storleken */
+}
+
+.benefit-item:hover {
+  transform: translateY(-10px); /* Lyft upp lite vid hover */
+}
+
+/* Ikoner */
+.icon {
+  font-size: 4rem; /* Större ikonstorlek */
+  color: #000; /* Svart ikonfärg */
+  margin-bottom: 20px;
+}
+
+/* Rubriker och text i boxar */
+.benefit-item h3 {
+  font-size: 1.5rem; /* Större rubrikstorlek */
+  margin-bottom: 15px;
+  color: #333;
+  min-height: 60px; /* Säkerställ att rubrikerna har samma höjd */
+}
+
+.benefit-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Mobilanpassning */
+@media (max-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr); /* Två per rad på mellanstora skärmar */
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits h2 {
+    font-size: 2rem;
+  }
+
+  .benefit-item {
+    padding: 20px;
+  }
+
+  .icon {
+    font-size: 3.5rem; /* Mindre ikonstorlek för mindre skärmar */
+  }
+
+  .benefit-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .benefit-item p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-grid {
+    grid-template-columns: 1fr; /* En per rad på små mobiler */
+  }
+
+  .icon {
+    font-size: 3rem; /* Ännu mindre ikonstorlek för små mobiler */
+  }
+
+  .benefit-item h3 {
+    font-size: 1.2rem;
+  }
+}
+
+.container h2 {
+  font-size: 1.8rem; /* Mindre textstorlek */
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #000; /* Svart text */
+  text-align: left;
+}
+
+/* AI-Lösningar Sneak Peek Sektion */
+.ai-solutions {
+  padding: 60px 20px;
+  background-color: #fff;
+  max-width: 1200px; /* Samma maxbredd som de andra sektionerna */
+  margin: 0 auto; /* Centrera sektionen */
+  text-align: center;
+}
+
+.ai-solutions h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid layout för lösningar */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tre per rad på större skärmar */
+  gap: 30px;
+}
+
+/* Lösning item styling */
+.solution-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Se till att innehållet och knappen är separerade */
+  height: 100%; /* Gör att varje ruta är lika hög */
+  text-align: left;
+}
+
+.solution-item:hover {
+  transform: translateY(-10px); /* Lyft upp lite vid hover */
+}
+
+.solution-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Innehåll i varje lösningsruta */
+.solution-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Fyll ut hela höjden av boxen */
+}
+
+.solution-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.solution-item p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: auto; /* Skjut texten uppåt för att hålla "Läs mer" längst ner */
+}
+
+/* Styling för Läs mer-knappen (likadan som i Hero) */
+.read-more-btn {
+  background-color: transparent;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  border: none; /* Ingen kantlinje */
+  overflow: hidden;
+  align-self: flex-start; /* Håll knappen till vänster */
+}
+
+.read-more-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Linjen täcker hela textens bredd */
+  height: 2px; /* Tjocklek på understrykningen */
+  background-color: #000; /* Svart färg för understrykningen */
+}
+
+/* Mobilanpassning */
+@media (max-width: 1024px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr); /* Två per rad på mellanstora skärmar */
+  }
+
+  .ai-solutions h2 {
+    font-size: 2.2rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .solutions-grid {
+    grid-template-columns: 1fr; /* En per rad på mindre skärmar */
+  }
+
+  .solution-item {
+    padding: 15px;
+  }
+
+  .solution-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .solution-item p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-solutions h2 {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Så Här Fungerar Det Sektion */
+.how-it-works {
+  padding: 60px 20px;
+  background-color: #fff;
+  max-width: 1200px; /* Samma maxbredd som de andra sektionerna */
+  margin: 0 auto; /* Centrera sektionen */
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #000;
+}
+
+/* Grid layout för steg */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Två per rad på större skärmar */
+  gap: 50px; /* Ökat avstånd mellan boxarna */
+}
+
+/* Styling för varje steg */
+.step-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Separera text och bild */
+  height: 100%; /* Gör att varje ruta är lika hög */
+  text-align: left;
+}
+
+.step-item:hover {
+  transform: translateY(-10px); /* Lyft upp lite vid hover */
+}
+
+.step-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Stegrubriker */
+.step-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.step-item h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+}
+
+.step-item p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Mobilanpassning */
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: 1fr; /* En per rad på mindre skärmar */
+    gap: 30px; /* Mindre gap för mobil */
+  }
+
+  .how-it-works h2 {
+    font-size: 2.2rem;
+  }
+
+  .step-item {
+    padding: 15px;
+  }
+
+  .step-item h3 {
+    font-size: 1.6rem;
+  }
+
+  .step-item h4 {
+    font-size: 1.2rem;
+  }
+
+  .step-item p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Call-to-Action Sektion i svartvitt */
+.cta-section-black-white {
+  background: url('your-black-and-white-image.jpg') no-repeat center center/cover; /* Lägg till din svartvita bakgrundsbild */
+  position: relative;
+  padding: 100px 20px; /* Öka padding för mer utrymme */
+  color: #000; /* Svart text */
+  text-align: center;
+}
+
+.cta-overlay-black-white {
+  background: rgba(255, 255, 255, 0.8); /* Ljus overlay för att göra texten tydlig */
+  padding: 60px 20px;
+  border-radius: 10px;
+}
+
+.cta-content-black-white {
+  max-width: 800px; /* Begränsar bredden för bättre läsbarhet */
+  margin: 0 auto;
+}
+
+.cta-section-black-white h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.cta-section-black-white p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Knappar i CTA Sektionen (svartvitt) */
+.cta-buttons-black-white {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Skapar avstånd mellan knapparna */
+}
+
+.cta-btn-black-white, .contact-btn-black-white {
+  background-color: #000; /* Svart bakgrund för knapparna */
+  color: #fff; /* Vit text */
+  padding: 12px 24px;
+  border-radius: 25px; /* Rundade hörn för ett mjukt utseende */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  min-width: 160px;
+  border: 2px solid #000; /* Svart ram för knappar */
+}
+
+.cta-btn-black-white:hover, .contact-btn-black-white:hover {
+  background-color: #fff; /* Invertera färger vid hover */
+  color: #000;
+  border: 2px solid #000; /* Bibehåll svart ram */
+  transform: scale(1.05); /* Liten zoom-effekt vid hover */
+}
+
+/* Mobilanpassning */
+@media (max-width: 768px) {
+  .cta-section-black-white h2 {
+    font-size: 2.4rem;
+  }
+
+  .cta-section-black-white p {
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons-black-white {
+    flex-direction: column;
+    gap: 15px; /* Mindre avstånd mellan knapparna på mobiler */
+  }
+}
+
